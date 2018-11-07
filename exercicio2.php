@@ -1,12 +1,12 @@
 <?php
 
-$numero = 17;
+$numero = 15;
 $div10 = 10;
 $div5 = 5;
 $div2 = 2;
-$opcao = 1;
 
-switch($opcao){
+
+switch($numero){
     case($numero % $div10 == 0):
         echo "O número " . $numero . " é divisível por 10<br>";
     
