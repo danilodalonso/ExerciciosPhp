@@ -20,7 +20,7 @@ switch($opcao){
     echo "O número " . $numero . " é divisivel por 2";
 
     default:
-        echo "O número " . $numero . " não é divisível por 10, por 5 nem por 2.";
+        echo "O número " . $numero . " não é divisível por 10, nem por 5 nem por 2.";
         break;
 
 }
