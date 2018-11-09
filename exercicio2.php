@@ -1,25 +1,28 @@
 <?php
 
-$numero = 15;
-$div10 = 10;
-$div5 = 5;
-$div2 = 2;
+$numero = 10;
+$div1 = 10;
+$div2 = 5;
+$div3 = 2;
 
+$divisivel = false;
 
-switch($numero){
-    case($numero % $div10 == 0):
-        echo "O número " . $numero . " é divisível por 10<br>";
-    
-    case($numero % $div5 == 0):
-        echo "O número " . $numero . " é divisível por 5<br>";
-    
-    case($numero % $div2 == 0):
-        echo "O número " . $numero . " é divisivel por 2<br>";
-        break;
-    default:
-        echo "O número " . $numero . " não é divisível por 10, nem por 5 e nem por 2.<br>";
-        break;
-
+if(($numero % $div1)==0){
+    echo "$numero é divisível por $div1<br>";
+    $divisivel = true;
 }
+
+if(($numero % $div2)==0){
+    echo "$numero é divisível por $div2<br>";
+    $divisivel = true;
+}
+
+if(($numero % $div3)==0){
+    echo "$numero é divisível por $div3<br>";
+    $divisivel = true;
+}
+
+if(!$divisivel)
+    echo "$numero não é divisível por nenhum dos números citados(10, 5 ou 2).";
 
 ?>
