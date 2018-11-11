@@ -12,12 +12,12 @@ if($conn->connect_error){
     die("Erro ao tentar criar a conexão" . $conn->connect_error);
 }
 
-$sql = $sql = "SELECT * FROM `Usuários`";
+$sql = "SELECT * FROM `usuarios`";
 $result = $conn->query($sql);
 
 
 if($result->num_rows>0){
-    echo "Número de registros retornados" . $result->num_rows;
+    echo "Número de registros retornados " . $result->num_rows;
 }else{
     echo "Ele não retornou nenhum registro";
 }
