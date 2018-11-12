@@ -1,6 +1,6 @@
 <?php
 
-$email = $_POST["nome"];
+$email = $_POST["email"];
 $senha = $_POST["senha"];
 
 $servidor = "cursophp_db_1";
@@ -14,8 +14,8 @@ if($conn->connect_error){
     die("Erro ao tentar criar a conexão" . $conn->connect_error);
 }
 
-$sql = "INSERT INTO tarefas";
-$sql.= " (nome, senha, status) ";
+$sql = "INSERT INTO usuarios";
+$sql.= " (email, senha, status) ";
 $sql.= " VALUES ";
 $sql.= "('".$email."',";
 $sql.= "'".$senha."',";
