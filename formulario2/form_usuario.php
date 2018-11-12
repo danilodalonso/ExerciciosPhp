@@ -7,7 +7,7 @@
     <body>
         <form action="gravar_tarefa.php" method="POST">
             <label>E-mail</label><br/>
-            <input type="text" name="e-mail"/><br/>
+            <input type="text" name="email"/><br/>
 
             <label>Senha</label><br/>
             <input type="password" name="senha"/><br/>
