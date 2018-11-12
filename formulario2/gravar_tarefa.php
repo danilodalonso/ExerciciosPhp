@@ -15,7 +15,7 @@ if($conn->connect_error){
 }
 
 $sql = "INSERT INTO tarefas";
-$sql.= " (nome, senha) ";
+$sql.= " (nome, senha, status) ";
 $sql.= " VALUES ";
 $sql.= "('".$email."',";
 $sql.= "'".$senha."',";
@@ -24,7 +24,7 @@ $sql.= "".$status.")";
 if($conn->query($sql) === TRUE){
     echo "Dados inseridos com sucesso!<br>";
 }else{
-    echo "Erro ao tentar inserir dados: " . $conn_error . "<br><br>";
+    echo "Erro ao tentar inserir dados: " . $conn->error . "<br><br>";
 }
 
 $conn->close();
