@@ -1,7 +1,9 @@
 <?php
 
 $email = $_POST["email"];
-$senha = $_POST["senha"];
+$senha_usuario = $_POST["senha"];
+$status = $_POST["status"];
+$id = $_POST["id"];
 
 $servidor = "cursophp_db_1";
 $usuario = "root";
@@ -14,25 +16,26 @@ if($conn->connect_error){
     die("Erro ao tentar criar a conexão" . $conn->connect_error);
 }
 if($id > 0){
-    $sql = "UPDATE usuarios SET ";
+    $sql = "UPDATE usuarios SET";
     $sql.= " email = '".$email."' ";
-    $sql.= " ,senha = '".$senha."' ";
+    $sql.= " ,senha = '".$senha_usuario."' ";
     $sql.= " ,status = ".$status." ";
-    $sql.= " WHERE id = " .$id;
+    $sql.= " WHERE id = " .$id. "";
 
 }else{
     $sql = "INSERT INTO usuarios";
     $sql.= " (email, senha, status) ";
     $sql.= " VALUES ";
     $sql.= "('".$email."',";
-    $sql.= "'".$senha."',";
+    $sql.= "'".$senha_usuario."',";
     $sql.= "".$status.")";
 }
 
 if($conn->query($sql) === TRUE){
-    echo "Dados inseridos com sucesso!<br>";
+    echo "Dados gravados com sucesso!<br>";
 }else{
     echo "Erro ao tentar inserir dados: " . $conn->error . "<br><br>";
+    echo $sql."<br>";
 }
 
 $conn->close();

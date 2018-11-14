@@ -23,6 +23,7 @@ if($result->num_rows > 0){
     $row = $result->fetch_assoc();
     $id = $row["id"];
     $email = $row["email"];
+    $senha_usuario = $row["senha"];
     $status = $row["status"];
 }
 }
@@ -41,7 +42,7 @@ if($result->num_rows > 0){
             <input type="text" name="email" value="<?=$email?>"/><br/>
 
             <label>Senha</label><br/>
-            <input type="password" name="senha" value="<?=$senha?>"/><br/>
+            <input type="password" name="senha" value="<?=$senha_usuario?>"/><br/>
 
             <label>Status</label><br/>
             <select name="status">
