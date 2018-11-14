@@ -1,7 +1,9 @@
 <?php
 
 $email = $_POST["email"];
-$senha = $_POST["senha"];
+$senha_usuario = $_POST["senha"];
+$status = $_POST["status"];
+$id = $_POST["id"];
 
 $servidor = "cursophp_db_1";
 $usuario = "root";
@@ -16,7 +18,7 @@ if($conn->connect_error){
 if($id > 0){
     $sql = "UPDATE usuarios SET ";
     $sql.= " email = '".$email."' ";
-    $sql.= " ,senha = '".$senha."' ";
+    $sql.= " ,senha = '".$senha_usuario."' ";
     $sql.= " ,status = ".$status." ";
     $sql.= " WHERE id = " .$id;
 
@@ -25,7 +27,7 @@ if($id > 0){
     $sql.= " (email, senha, status) ";
     $sql.= " VALUES ";
     $sql.= "('".$email."',";
-    $sql.= "'".$senha."',";
+    $sql.= "'".$senha_usuario."',";
     $sql.= "".$status.")";
 }
 
