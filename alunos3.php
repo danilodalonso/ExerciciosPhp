@@ -1,4 +1,4 @@
-<form action="processa_form.php" method="POST"/>
+<form action="processa_form.php" method="POST">
     <label>Nome</label><br>
     <input type="text" name="nome"/><br>
     <label>Senha</label><br>
