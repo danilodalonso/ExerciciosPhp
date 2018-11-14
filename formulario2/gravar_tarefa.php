@@ -1,7 +1,8 @@
 <?php
 
 $email = $_POST["email"];
-$senha = $_POST["senha"];
+$senha_usuario = $_POST["senha"];
+$status = $_POST["status"];
 
 $servidor = "cursophp_db_1";
 $usuario = "root";
@@ -18,13 +19,15 @@ $sql = "INSERT INTO usuarios";
 $sql.= " (email, senha, status) ";
 $sql.= " VALUES ";
 $sql.= "('".$email."',";
-$sql.= "'".$senha."',";
+$sql.= "'".$senha_usuario."',";
 $sql.= "".$status.")";
+
 
 if($conn->query($sql) === TRUE){
     echo "Dados inseridos com sucesso!<br>";
 }else{
     echo "Erro ao tentar inserir dados: " . $conn->error . "<br><br>";
+    echo $sql."<br>";
 }
 
 $conn->close();
